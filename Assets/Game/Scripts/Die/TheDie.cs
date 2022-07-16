@@ -17,6 +17,7 @@ public class TheDie : MonoBehaviour
     [SerializeField] private float rotateDuration = 4f;
     [SerializeField] private float choiceRotationDuration = 0.6f;
     [SerializeField] private AnimationCurve speedIncreaseCurve;
+    [SerializeField] private Transform rotationRoot;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
     private DiceGameEvent lastPicked;
@@ -39,9 +40,7 @@ public class TheDie : MonoBehaviour
 
     public void Roll()
     {
-        animator.SetTrigger("StartRoll");
         StartCoroutine(RollAndPick());
-        animator.SetTrigger("EndRoll");
     }
 
     public void RandomizeFaces(int rolls)
@@ -77,6 +76,8 @@ public class TheDie : MonoBehaviour
         SideChoice choice = GetRandomChoice();
         lastPicked = choice.diceSideEvent;
 
+        animator.SetTrigger("StartRoll");
+        yield return new WaitForSeconds(0.46f);
         // Random rot
         float elapsed = 0f;
         float newRotationTimer = 0f;
@@ -89,7 +90,7 @@ public class TheDie : MonoBehaviour
                 newRotationTimer = 0;
             }
             float speed = rotationSpeed * speedIncreaseCurve.Evaluate(elapsed / rotateDuration);
-            transform.Rotate(target * Time.deltaTime * speed);
+            rotationRoot.Rotate(target * Time.deltaTime * speed);
 
             elapsed += Time.deltaTime;
             newRotationTimer += Time.deltaTime;
@@ -100,16 +101,19 @@ public class TheDie : MonoBehaviour
         elapsed = 0f;
         Quaternion finalRot = Quaternion.LookRotation(Vector3.up, Vector3.right); // Subtract
         finalRot = finalRot * Quaternion.Inverse(choice.faceTransform.rotation); // Add
-        finalRot = finalRot * transform.rotation;
+        finalRot = finalRot * rotationRoot.rotation;
 
-        Quaternion startRot = transform.rotation;
+        Quaternion startRot = rotationRoot.rotation;
         while(elapsed <= choiceRotationDuration)
         {
-            transform.rotation = Quaternion.Slerp(
+            rotationRoot.rotation = Quaternion.Slerp(
                 startRot, finalRot, elapsed / choiceRotationDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
+
+        animator.SetTrigger("EndRoll");
+
     }
     
     //! Called via animation event to trigger the game event
