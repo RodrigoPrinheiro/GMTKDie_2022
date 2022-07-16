@@ -11,6 +11,7 @@ public class SideChoice
 public class TheDie : MonoBehaviour
 {
     private DieFaces faces;
+    private DieEventsManager eventsManager;
     private Animator animator;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float rotateDuration = 4f;
@@ -18,12 +19,14 @@ public class TheDie : MonoBehaviour
     [SerializeField] private AnimationCurve speedIncreaseCurve;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
+    private DiceGameEvent lastPicked;
 
     private void Awake() 
     {
         faces = GetComponentInChildren<DieFaces>();
         animator = GetComponent<Animator>();
 
+        eventsManager = GetComponent<DieEventsManager>();
         diceState = new Dictionary<DieFaces.Direction, DiceGameEvent>();
     }
     
@@ -38,6 +41,7 @@ public class TheDie : MonoBehaviour
     {
         animator.SetTrigger("StartRoll");
         StartCoroutine(RollAndPick());
+        animator.SetTrigger("EndRoll");
     }
 
     public void RandomizeFaces(int rolls)
@@ -71,7 +75,9 @@ public class TheDie : MonoBehaviour
     public IEnumerator RollAndPick()
     {
         SideChoice choice = GetRandomChoice();
+        lastPicked = choice.diceSideEvent;
 
+        // Random rot
         float elapsed = 0f;
         float newRotationTimer = 0f;
         Vector3 target = Random.insideUnitSphere.normalized;
@@ -90,7 +96,7 @@ public class TheDie : MonoBehaviour
             yield return null;
         }
 
-
+        // Rotate to correct side
         elapsed = 0f;
         Quaternion finalRot = Quaternion.LookRotation(Vector3.up, Vector3.right); // Subtract
         finalRot = finalRot * Quaternion.Inverse(choice.faceTransform.rotation); // Add
@@ -104,7 +110,17 @@ public class TheDie : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+    }
+    
+    //! Called via animation event to trigger the game event
+    public void TriggerSide()
+    {
+        if (lastPicked.activationParticles != null)
+        {
+            GameObject obj = Instantiate(lastPicked.activationParticles, transform.position, Quaternion.identity);
+            Destroy(obj, lastPicked.destroyParticlesAfter);
+        }
 
-        animator.SetTrigger("EndRoll");
+        eventsManager.QueueEvent(lastPicked);
     }
 }

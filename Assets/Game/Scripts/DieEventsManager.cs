@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class DieEventsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void QueueEvent(DiceGameEvent gameEvent)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

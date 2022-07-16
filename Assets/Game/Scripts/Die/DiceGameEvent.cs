@@ -17,6 +17,8 @@ public class DiceGameEvent : ScriptableObject
     
     [Header("Action")]
     public GameObject diceSideVisual;
+    public GameObject activationParticles;
+    public float destroyParticlesAfter = 1f;
     public GameObject eventPack;
     
     [Header("Audio")]
