@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
-  m_Name: Dice Event Test
+  m_Name: RuneE
   m_EditorClassIdentifier: 
   type: 0
   persistentTimeLoop: 120
   minRollsToAppear: 0
-  unlocksEvent: {fileID: 11400000, guid: eea6a422e97068a40ae8e2130d88d861, type: 2}
+  unlocksEvent: {fileID: 0}
   unlockable: 0
-  diceSideVisual: {fileID: 0}
+  diceSideVisual: {fileID: 971296801637518074, guid: 5cba0901fa111b649b19eabd83fbc98e, type: 3}
   eventPack: {fileID: 0}
   voiceClip: {fileID: 0}

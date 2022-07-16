@@ -29,6 +29,10 @@ public class DieFaces : MonoBehaviour
     public void SetFace(DiceGameEvent e, Direction dir)
     {
         // Generate face
+        Transform target = diceSidesDic[dir];
+
+        GameObject obj = Instantiate(e.diceSideVisual, target);
+        obj.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     public Transform GetTransform(Direction dir)
@@ -36,10 +40,10 @@ public class DieFaces : MonoBehaviour
         return diceSidesDic[dir];
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         foreach(Transform c in transform)
         {
-            Gizmos.DrawSphere(c.transform.position, 0.1f);
+            Gizmos.DrawSphere(c.transform.position, 0.01f);
         }
     }
 }

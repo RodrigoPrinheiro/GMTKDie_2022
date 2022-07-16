@@ -46,7 +46,6 @@ public class TheDie : MonoBehaviour
         int index = 0;
         foreach (var item in pickedEvents)
         {
-            index++;
             DieFaces.Direction d = (DieFaces.Direction)index;
             
             if (!diceState.ContainsKey(d))
@@ -55,6 +54,7 @@ public class TheDie : MonoBehaviour
                 diceState[d] = item;
             
             faces.SetFace(item, d);
+            index++;
         }
     }
 
@@ -63,6 +63,8 @@ public class TheDie : MonoBehaviour
         DieFaces.Direction dir = (DieFaces.Direction)Random.Range(0, 6);
         DiceGameEvent picked = diceState[dir];
         
+        Debug.Log($"Picked event with dice side {dir} and event {picked.name}");
+
         return new SideChoice(){faceTransform = faces.GetTransform(dir), diceSideEvent = picked};
     }
 
@@ -90,14 +92,19 @@ public class TheDie : MonoBehaviour
 
 
         elapsed = 0f;
+        Quaternion finalRot = Quaternion.LookRotation(Vector3.up, Vector3.right); // Subtract
+        finalRot = finalRot * Quaternion.Inverse(choice.faceTransform.rotation); // Add
+        finalRot = finalRot * transform.rotation;
+
+        Quaternion startRot = transform.rotation;
         while(elapsed <= choiceRotationDuration)
         {
-            float singleStep = rotationSpeed * Time.deltaTime;
-
+            transform.rotation = Quaternion.Slerp(
+                startRot, finalRot, elapsed / choiceRotationDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        animator.SetTrigger("StopRoll");
+        animator.SetTrigger("EndRoll");
     }
 }
