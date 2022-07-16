@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ea87509ca55b04c8ec9840887ad3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: {x: 0.85, y: 1.15}
+  _speed: {x: 0.3, y: 0.8}
 --- !u!1 &5936227050709470383 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3419325969132320349, guid: 9cbc9b82306f5604da282ed52402285c, type: 3}
@@ -546,7 +546,7 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 3
+  WavingSpeed: 1
   WavingRange: 0.8
   WavingAxis: {x: 1, y: 1, z: 1}
   WavingType: 1
@@ -668,7 +668,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DeflectOnlyCollisions: 1
-  _Editor_Category: 0
+  _Editor_Category: 2
   _Editor_FeaturesCategory: 0
   DrawGizmos: 1
   StartBone: {fileID: 54234486285775195}
