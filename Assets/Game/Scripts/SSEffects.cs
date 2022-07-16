@@ -8,15 +8,8 @@ public interface ISSEffect
     void Activate(float strength, float transitionTime, Action effectAction = null);
 }
 
-public class SSEffects : MonoBehaviour
+public class SSEffects : Singleton<SSEffects>
 {
-    private static SSEffects instance;
-    
-    private void Awake() 
-    {
-        instance = this;
-    }
-
     public void _ActivateEffect(string fxName, float strength, float time, Action effectAction = null)
     {
         ISSEffect effect =  (ISSEffect)transform.Find(fxName).GetComponent(typeof(ISSEffect));
@@ -40,5 +33,15 @@ public class SSEffects : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+    }
+
+    protected override void OnAwake()
+    {
+        
+    }
+
+    protected override void MyDestroy()
+    {
+        
     }
 }

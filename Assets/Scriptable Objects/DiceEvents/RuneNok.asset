@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
+  m_Name: RuneNok
+  m_EditorClassIdentifier: 
+  type: 0
+  persistentTimeLoop: 120
+  minRollsToAppear: 0
+  unlocksEvent: {fileID: 0}
+  unlockable: 0
+  diceSideVisual: {fileID: 3754901354428783763, guid: 074931a973c98b1478fe0ec5d86f9e65, type: 3}
+  eventPack: {fileID: 0}
+  voiceClip: {fileID: 0}
