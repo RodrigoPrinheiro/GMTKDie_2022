@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameData : Singleton<GameData>
 {
+    [SerializeField]
     private List<DiceGameEvent> dieEvents = new List<DiceGameEvent>();
     private Dictionary<string, List<DiceGameEvent>> dieEventDictionary;
     protected override void MyDestroy()
