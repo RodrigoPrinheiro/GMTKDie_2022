@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722078551736877}
   m_Layer: 0
-  m_Name: R+
+  m_Name: Xp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722078575773383}
   m_Layer: 0
-  m_Name: F+
+  m_Name: Zp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722078697564159}
   m_Layer: 0
-  m_Name: Y+
+  m_Name: Yp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722079053851511}
   m_Layer: 0
-  m_Name: Y-
+  m_Name: Ym
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722079745341624}
   m_Layer: 0
-  m_Name: R-
+  m_Name: Xm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 992722080212413780}
   - component: {fileID: 2373125772153274346}
   - component: {fileID: 7474777405128086836}
+  - component: {fileID: 8085205404946832553}
   m_Layer: 0
   m_Name: Die
   m_TagString: Untagged
@@ -381,6 +382,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8b8cabf5b7c904ab884048b273233d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 1000
+  rotateDuration: 4
+  choiceRotationDuration: 0.6
+  speedIncreaseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 9.621528
+      outSlope: 9.621528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.04580156
+    - serializedVersion: 3
+      time: 0.32147217
+      value: 1.0055542
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7474777405128086836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +421,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6f8502f1c429a4f984569a256f4505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &8085205404946832553
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992722080212413783}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &992722080429235882
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992722080429235883}
   m_Layer: 0
-  m_Name: F-
+  m_Name: Zm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
