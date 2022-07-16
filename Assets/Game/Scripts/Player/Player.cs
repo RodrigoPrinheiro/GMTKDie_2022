@@ -23,13 +23,16 @@ public class Player : MonoBehaviour
     public static Player instance;
     [SerializeField, ReadOnly] private PlayerState state;
     [SerializeField] private float leanSpeed = 0.6f;
+    [SerializeField, Range(0f, 1.2f)] private float blinkTime = 0.5f;
     [SerializeField] private Transform leanTransform;
     [SerializeField] private List<StateChange> changes;
 
+    public event System.Action closeEyesEvent;
     private Vector3 holderStartPosition;
     private Quaternion holderStartRotation;
     private Vector3 targetPosition;
     private Quaternion targetRotation;
+    private bool closedEyes = false;
 
     private void Awake()
     {
@@ -65,26 +68,43 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(key))
         {
             state = target;
+            UpdateState(state);
         }
         else if (state == target && Input.GetKeyUp(key))
         {
+            LeaveState(state);
             state = PlayerState.Default;
+            UpdateState(state);
         }
-        UpdateState(state);
-
     }
 
+    public void LeaveState(PlayerState oldState)
+    {
+        switch(oldState)
+        {
+            case PlayerState.EyesClosed:
+                closedEyes = false;
+                SSEffects.ActivateEffect("Blink", 0f, blinkTime);
+                break;
+        }
+    }
     public void UpdateState(PlayerState newState)
     {
         switch (newState)
         {
             case PlayerState.EyesClosed:
-                //! Send close eyes vfx event
+                SSEffects.ActivateEffect("Blink", 1f, blinkTime, closeEyesEvent);
+                closedEyes = true;
                 break;
             case PlayerState.Default:
             case PlayerState.LeanRight:
             case PlayerState.LeanLeft:
             case PlayerState.LeanDown:
+                if (closedEyes)
+                {
+                    SSEffects.ActivateEffect("Blink", 0f, blinkTime);
+                    closedEyes = false;
+                }
                 ActState(changes[(int)newState]);
                 break;
         }
