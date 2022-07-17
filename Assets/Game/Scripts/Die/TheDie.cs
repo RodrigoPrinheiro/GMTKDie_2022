@@ -163,7 +163,7 @@ public class TheDie : MonoBehaviour
         
         if (eventData.activationParticles != null)
         {
-            GameObject obj = Instantiate(eventData.activationParticles, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(eventData.activationParticles, transform.position, Quaternion.identity, transform);
             Destroy(obj, eventData.destroyParticlesAfter);
         }
 

@@ -58,7 +58,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 219ba97254d6de84ba1233b668e0f08f, type: 3}
+        m_Texture: {fileID: 2800000, guid: acb444c4f354fb74483337191f202ea2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -82,6 +82,8 @@ Material:
     - _DistortionStrengthScaled: 0
     - _DstBlend: 10
     - _EmissionEnabled: 0
+    - _EmissionIntensity: 2
+    - _EmissionStrength: 3
     - _FlipbookMode: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
