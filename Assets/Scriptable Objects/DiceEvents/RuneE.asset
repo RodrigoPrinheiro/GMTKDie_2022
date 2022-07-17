@@ -23,4 +23,4 @@ MonoBehaviour:
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
   eventPack: {fileID: 8525210506979927063, guid: 8ea48e55884459840989ab7bddcfcfd8, type: 3}
-  voiceClip: {fileID: 0}
+  voiceClip: {fileID: 11400000, guid: 5738ee703aaadde4fb0969341bdd1d9d, type: 2}
