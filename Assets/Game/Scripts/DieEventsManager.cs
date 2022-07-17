@@ -19,7 +19,7 @@ public class DieEventsManager : MonoBehaviour
     private void Update()
     {
         if (EventRunning) return;
-
+        
         if (queuedGameEvents.Count > 0)
         {
             EventInstance e = queuedGameEvents.Dequeue();
