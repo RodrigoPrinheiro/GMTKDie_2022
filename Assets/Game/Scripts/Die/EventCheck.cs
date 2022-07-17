@@ -18,7 +18,13 @@ public class EventCheck : MonoBehaviour
     {
         if (Player.instance.state != checkState)
         {
+            if (buildUpToDeath > buildUpTime)
+            {
+                Player.instance.Die();
+            }
+
             buildUpToDeath += Time.deltaTime;
+
         }
     }
 }

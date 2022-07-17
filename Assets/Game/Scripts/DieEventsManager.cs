@@ -31,6 +31,7 @@ public class DieEventsManager : MonoBehaviour
         {
             if (activePersistentEvents[i].CanTrigger())
             {
+                Debug.Log("Triggered persistent event");
                 activePersistentEvents[i].Run();
             }
         }
