@@ -28,16 +28,18 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform leanTransform;
     [SerializeField] private List<StateChange> changes;
 
-    public event System.Action closeEyesEvent;
+    public System.Action closeEyesEvent;
     private Vector3 holderStartPosition;
     private Quaternion holderStartRotation;
     private Vector3 targetPosition;
     private Quaternion targetRotation;
     private bool closedEyes = false;
-
+    public int progressionCount {get; set;}
     private void Awake()
     {
         instance = this;
+
+        progressionCount = -1;
         if (changes.Count < 5)
         {
             for (int i = 0; i < 5 - changes.Count; i++)

@@ -11,6 +11,7 @@ public class EventInstance : MonoBehaviour
     private float lastTimeStamp;
     private bool isRunning = false;
     private float runTime;
+    public bool LockEvent {get; set;}
     public void Run()
     {
         CheckSave(Data);
@@ -39,7 +40,7 @@ public class EventInstance : MonoBehaviour
         if (isRunning)
         {
             runTime += Time.deltaTime;
-            if (runTime > Data.eventDuration)
+            if (runTime > Data.eventDuration && !LockEvent)
             {
                 End();
             }
