@@ -39,7 +39,7 @@ public class EventScriptDimmLight : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 
-		yield return new WaitForSeconds(20f);
+		yield return new WaitForSeconds(5f);
 		
 		while (_profile.vignette.settings.intensity > intensity + 0.01f)
 		{
