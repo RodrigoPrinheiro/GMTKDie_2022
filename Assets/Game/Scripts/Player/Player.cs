@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     }
 
     public static Player instance;
+    public bool Enabled {get; set;}
     [SerializeField, ReadOnly] private PlayerState state;
     [SerializeField] private float leanSpeed = 0.6f;
     [SerializeField, Range(0f, 1.2f)] private float blinkTime = 0.5f;
@@ -48,12 +49,17 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        SSEffects.FxAnimator.SetTrigger("OpenEyes");
         holderStartPosition = leanTransform.localPosition;
         holderStartRotation = leanTransform.localRotation;
+
+        Enabled = true;
     }
 
     private void Update()
     {
+        if (!Enabled) return;
+
         CheckState(KeyCode.A, PlayerState.LeanLeft);
         CheckState(KeyCode.D, PlayerState.LeanRight);
         CheckState(KeyCode.S, PlayerState.LeanDown);
@@ -87,6 +93,12 @@ public class Player : MonoBehaviour
                 SSEffects.ActivateEffect("Blink", 0f, blinkTime);
                 break;
         }
+    }
+
+    public void Die()
+    {
+        Enabled = false;
+        GetComponent<DeathSequence>().DeathFX();
     }
     public void UpdateState(PlayerState newState)
     {

@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectMaterial: {fileID: 2100000, guid: 41c15e7cf1e57dc4c8644ac05903962e, type: 2}
-  vignetteSize: 1
+  vignetteSize: 0.7
   vignettePower: 5
   blinkInCurve:
     serializedVersion: 2

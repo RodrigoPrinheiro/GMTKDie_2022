@@ -21,7 +21,9 @@ public abstract class BaseEffect : MonoBehaviour
     private void Update()
     {
         if (isPlaying)
+        {
             effectMaterial.SetFloat(sizeProp, vignetteSize);
-        effectMaterial.SetFloat(powerProp, vignettePower);
+            effectMaterial.SetFloat(powerProp, vignettePower);
+        }
     }
 }

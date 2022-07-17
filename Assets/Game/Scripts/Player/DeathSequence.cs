@@ -12,10 +12,15 @@ public class DeathSequence : MonoBehaviour
 
     private void Start() 
     {
+    }
+
+    public void DeathFX()
+    {
         StartCoroutine(DeathSequenceRoutine());
     }
     private IEnumerator DeathSequenceRoutine()
     {
+
         SSEffects.FxAnimator.SetTrigger("DeathEffect");
         animator.SetTrigger("Death");
         yield return null;
