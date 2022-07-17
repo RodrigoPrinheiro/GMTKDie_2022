@@ -20,6 +20,8 @@ public class TheDie : MonoBehaviour
     [SerializeField] private AnimationCurve speedIncreaseCurve;
     [SerializeField] private Transform rotationRoot;
     [SerializeField] private ParticleSystem _rotatePS;
+    [SerializeField] private SoundDef rollSound;
+    [SerializeField] private SoundDef resultSound;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
     public SideChoice rollPick { get; private set; }
@@ -117,7 +119,7 @@ public class TheDie : MonoBehaviour
 
     public SideChoice GetRandomChoice()
     {
-        if (rollsCount % 2 == 0)
+        if (rollsCount % 3 == 0)
         {
             for (int i = 0; i < 6; i++)
             {
@@ -144,6 +146,7 @@ public class TheDie : MonoBehaviour
 
         animator.SetTrigger("StartRoll");
         yield return new WaitForSeconds(0.46f);
+        AudioSource rollSource = SoundManager.Play(rollSound);
         // Random rot
         float elapsed = 0f;
         float newRotationTimer = 0f;
@@ -162,6 +165,8 @@ public class TheDie : MonoBehaviour
             newRotationTimer += Time.deltaTime;
             yield return null;
         }
+
+        rollSource.Stop();
 
         // Rotate to correct side
         elapsed = 0f;
@@ -185,6 +190,7 @@ public class TheDie : MonoBehaviour
     //! Called via animation event to trigger the game event
     public void TriggerSide()
     {
+        SoundManager.Play(resultSound);
         DiceGameEvent eventData = null;
         if (overrideEvent != null)
         {

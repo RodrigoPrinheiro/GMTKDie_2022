@@ -20,10 +20,7 @@ public class StoryProgression : MonoBehaviour
         ev.ChangeDuration(s.audioClip[0].length);
 
         if (Player.instance.progressionCount == 7)
-        {
             ev.gameObject.AddComponent<DeathOnEventEnd>();
-
-        }
 
     }
 }

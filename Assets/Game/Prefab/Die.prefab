@@ -315,6 +315,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   rotationRoot: {fileID: 6258696107924809943}
   _rotatePS: {fileID: 2370932466830078577}
+  rollSound: {fileID: 11400000, guid: aee38a4cab0b028429518c5162b9e64c, type: 2}
+  resultSound: {fileID: 11400000, guid: c58f497e80369d341bd38b28f0b4030a, type: 2}
 --- !u!114 &7474777405128086836
 MonoBehaviour:
   m_ObjectHideFlags: 0
