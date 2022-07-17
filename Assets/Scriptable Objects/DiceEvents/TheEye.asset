@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
-  m_Name: RuneTarip
+  m_Name: TheEye
   m_EditorClassIdentifier: 
   type: 0
   eventDuration: 20
@@ -19,8 +19,8 @@ MonoBehaviour:
   byPassQueue: 0
   unlocksEvent: {fileID: 0}
   unlockable: 0
-  diceSideVisual: {fileID: 6743865231617402253, guid: caae2ec61411e624b815beee4976f1d9, type: 3}
+  diceSideVisual: {fileID: 2372985839085849398, guid: 8e66859cfcc2fb04cb1bf7d872993227, type: 3}
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
-  eventPack: {fileID: 2993728544341191652, guid: 53c7ddf2eadfbd1479ad7106aa9f2084, type: 3}
+  eventPack: {fileID: 6780178583389552985, guid: aefcaddbf1a9f23419a72be4dd6de043, type: 3}
   voiceClip: {fileID: 0}

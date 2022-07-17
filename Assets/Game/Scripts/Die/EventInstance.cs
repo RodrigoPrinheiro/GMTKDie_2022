@@ -11,12 +11,15 @@ public class EventInstance : MonoBehaviour
     private float lastTimeStamp;
     private bool isRunning = false;
     private float runTime;
+    public bool LockEvent {get; set;}
+    private float eventDuration = 0;
     public void Run()
     {
         CheckSave(Data);
 
         EventsManager.EventRunning = true;
         runTime = 0f;
+        eventDuration = Data.eventDuration;
 
         // Play voice line and wait for it to end before starting
         StartCoroutine(WaitForVoiceLine(Data.voiceClip));
@@ -39,11 +42,18 @@ public class EventInstance : MonoBehaviour
         if (isRunning)
         {
             runTime += Time.deltaTime;
-            if (runTime > Data.eventDuration)
+            if (runTime > Data.eventDuration && !LockEvent)
             {
                 End();
             }
         }
+    }
+
+    public void ChangeDuration(float newDuration)
+    {
+        if (!isRunning) Debug.Log("Tried changing event time but no effect");
+        
+        eventDuration = newDuration;
     }
 
     private IEnumerator WaitForVoiceLine(SoundDef voiceClip)

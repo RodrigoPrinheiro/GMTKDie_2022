@@ -6615,7 +6615,7 @@ GameObject:
   - component: {fileID: 1026171423}
   m_Layer: 0
   m_Name: Water Floor Scenery
-  m_TagString: Untagged
+  m_TagString: Scene Pack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16940,7 +16940,7 @@ GameObject:
   - component: {fileID: 1852428608}
   m_Layer: 0
   m_Name: Void Scenery
-  m_TagString: Untagged
+  m_TagString: Scene Pack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22973,7 +22973,7 @@ GameObject:
   - component: {fileID: 2077448939}
   m_Layer: 0
   m_Name: Forest Scenery
-  m_TagString: Untagged
+  m_TagString: Scene Pack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
