@@ -43,6 +43,8 @@ public class DieEventsManager : MonoBehaviour
             GameData.instance.Unlock(gameEvent.unlocksEvent);
         }
 
+        if (gameEvent.eventPack == null) return;
+        
         GameObject g = Instantiate(gameEvent.eventPack, Vector3.zero, Quaternion.identity);
         EventInstance newEvent = g.GetComponent<EventInstance>();
 

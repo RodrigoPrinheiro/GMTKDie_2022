@@ -13,6 +13,20 @@ public class GameData : Singleton<GameData>
 
     }
 
+    public DiceGameEvent GetRandomEvent(int rollCount)
+    {
+        System.Random rnd = new System.Random();
+        List<DiceGameEvent> choices = dieEventDictionary["active"];
+        DiceGameEvent pick = null;
+
+        do
+        {
+            int index = rnd.Next(0, choices.Count);
+            pick = choices[index];
+        }while(pick.minRollsToAppear > rollCount);
+
+        return pick;
+    }
     public HashSet<DiceGameEvent> EventsForRollCount(int rollCount)
     {
         System.Random rnd = new System.Random();

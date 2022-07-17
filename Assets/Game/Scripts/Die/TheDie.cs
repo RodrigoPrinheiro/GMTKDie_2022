@@ -20,8 +20,8 @@ public class TheDie : MonoBehaviour
     [SerializeField] private Transform rotationRoot;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
-    private DiceGameEvent lastPicked;
-
+    private SideChoice rollPick;
+    public static bool Rolling {get; private set;}
     private void Awake() 
     {
         faces = GetComponentInChildren<DieFaces>();
@@ -35,14 +35,45 @@ public class TheDie : MonoBehaviour
     {
         rollsCount = 0;
         RandomizeFaces(0);
-        Roll();
     }
-
+    
+    private void Update() {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Roll();
+        }
+    }
     public void Roll()
     {
+        if (Rolling || eventsManager.EventRunning) return;
+
+        Rolling = true;
+        for (int i = 0; i < 6; i++)
+        {
+            DieFaces.Direction dir = (DieFaces.Direction)i;
+            
+            if (diceState[dir] == null)
+            {
+                // Get new side for this
+                SetNewFace(dir);
+            }
+        }
         StartCoroutine(RollAndPick());
     }
 
+    private void SetNewFace(DieFaces.Direction dir, DiceGameEvent overr = null)
+    {
+        if (overr != null)
+        {
+            diceState[dir] = overr;
+            faces.SetFace(overr, dir);
+            return;
+        }
+
+        var pick = GameData.instance.GetRandomEvent(rollsCount);
+        diceState[dir] = pick;
+        faces.SetFace(pick, dir);
+    }
     public void RandomizeFaces(int rolls)
     {
         var pickedEvents = GameData.instance.EventsForRollCount(rolls);
@@ -68,13 +99,13 @@ public class TheDie : MonoBehaviour
         
         Debug.Log($"Picked event with dice side {dir} and event {picked.name}");
 
+        diceState[dir] = null;
         return new SideChoice(){faceTransform = faces.GetTransform(dir), diceSideEvent = picked};
     }
 
     public IEnumerator RollAndPick()
     {
-        SideChoice choice = GetRandomChoice();
-        lastPicked = choice.diceSideEvent;
+        rollPick = GetRandomChoice();
 
         animator.SetTrigger("StartRoll");
         yield return new WaitForSeconds(0.46f);
@@ -100,7 +131,7 @@ public class TheDie : MonoBehaviour
         // Rotate to correct side
         elapsed = 0f;
         Quaternion finalRot = Quaternion.LookRotation(Vector3.up, Vector3.right); // Subtract
-        finalRot = finalRot * Quaternion.Inverse(choice.faceTransform.rotation); // Add
+        finalRot = finalRot * Quaternion.Inverse(rollPick.faceTransform.rotation); // Add
         finalRot = finalRot * rotationRoot.rotation;
 
         Quaternion startRot = rotationRoot.rotation;
@@ -119,12 +150,35 @@ public class TheDie : MonoBehaviour
     //! Called via animation event to trigger the game event
     public void TriggerSide()
     {
-        if (lastPicked.activationParticles != null)
+        DiceGameEvent eventData = rollPick.diceSideEvent;
+        if (eventData.activationParticles != null)
         {
-            GameObject obj = Instantiate(lastPicked.activationParticles, transform.position, Quaternion.identity);
-            Destroy(obj, lastPicked.destroyParticlesAfter);
+            GameObject obj = Instantiate(eventData.activationParticles, transform.position, Quaternion.identity);
+            Destroy(obj, eventData.destroyParticlesAfter);
         }
 
-        eventsManager.QueueEvent(lastPicked);
+        eventsManager.QueueEvent(eventData);
+        StartCoroutine(HideAndDestroySide(rollPick.faceTransform));
+    }
+
+    private IEnumerator HideAndDestroySide(Transform sideTransform)
+    {
+        yield return new WaitForSeconds(0.6f);
+        Transform sideObject = sideTransform.GetChild(0);
+
+        float elapsed = 0;
+        Vector3 start = sideObject.position;
+        while(elapsed < 2f)
+        {
+            sideObject.position = Vector3.Lerp(
+                start, 
+                start + Vector3.down * 0.5f, elapsed / 2f);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(sideObject.gameObject);
+
+        Rolling = false;
     }
 }
