@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6520337fba97484b9aedbe8ecfd9592, type: 3}
   m_Name: Creepychildren
   m_EditorClassIdentifier: 
-  group: {fileID: 0}
-  is3D: 0
+  group: {fileID: -32598007665047129, guid: 359216fa79b83104da52364087061bbd, type: 2}
+  is3D: 1
   isLoop: 0
   isScene: 1
   audioClip:
