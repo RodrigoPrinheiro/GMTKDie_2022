@@ -21,7 +21,7 @@ public class TheDie : MonoBehaviour
     [SerializeField] private Transform rotationRoot;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
-    private SideChoice rollPick;
+    public SideChoice rollPick { get; private set; }
     public static bool Rolling { get; private set; }
     private void Awake()
     {
@@ -45,6 +45,21 @@ public class TheDie : MonoBehaviour
             Roll();
         }
     }
+
+	public DiceGameEvent GetDieFaceEvent(DieFaces.Direction direction)
+	{
+		return diceState[direction];
+	}
+
+	public void DestroyAllFaces()
+	{
+		foreach (var item in diceState)
+		{
+			Transform sideObject = faces.GetTransform(item.Key).GetChild(0);
+			Destroy(sideObject.gameObject);
+		}
+	}
+
     public void Roll()
     {
         if (Rolling || eventsManager.EventRunning) return;
@@ -174,21 +189,24 @@ public class TheDie : MonoBehaviour
     private IEnumerator HideAndDestroySide(Transform sideTransform)
     {
         yield return new WaitForSeconds(0.6f);
-        Transform sideObject = sideTransform.GetChild(0);
+		if (sideTransform.childCount > 0)
+		{
+			Transform sideObject = sideTransform.GetChild(0);
 
-        float elapsed = 0;
-        Vector3 start = sideObject.position;
-        while (elapsed < 2f)
-        {
-            sideObject.position = Vector3.Lerp(
-                start,
-                start + Vector3.down * 0.5f, elapsed / 2f);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
+			float elapsed = 0;
+			Vector3 start = sideObject.position;
+			while (elapsed < 2f)
+			{
+				sideObject.position = Vector3.Lerp(
+					start,
+					start + Vector3.down * 0.5f, elapsed / 2f);
+				elapsed += Time.deltaTime;
+				yield return null;
+			}
 
-        Destroy(sideObject.gameObject);
+			Destroy(sideObject.gameObject);
 
-        Rolling = false;
+			Rolling = false;
+		}
     }
 }
