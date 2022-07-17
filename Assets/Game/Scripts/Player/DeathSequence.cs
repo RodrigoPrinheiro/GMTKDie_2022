@@ -17,17 +17,18 @@ public class DeathSequence : MonoBehaviour
 
     }
 
-    public void DeathFX()
+    public void DeathFX(bool playThomas = true)
     {
         SoundManager.Play(deathVA);
-        StartCoroutine(DeathSequenceRoutine());
+        StartCoroutine(DeathSequenceRoutine(playThomas));
     }
-    private IEnumerator DeathSequenceRoutine()
+    private IEnumerator DeathSequenceRoutine(bool playThomas)
     {
         SSEffects.FxAnimator.SetTrigger("DeathEffect");
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(5f);
-        SoundManager.Play(death);
+        if (playThomas)
+            SoundManager.Play(death);
         yield return new WaitForSeconds(20f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }

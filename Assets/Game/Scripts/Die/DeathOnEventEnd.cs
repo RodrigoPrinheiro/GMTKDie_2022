@@ -9,6 +9,6 @@ public class DeathOnEventEnd : MonoBehaviour
         int completed = PlayerPrefs.GetInt("Game Completed", 0);
         completed++;
         PlayerPrefs.SetInt("Game Completed", completed);
-        Player.instance.Die();
+        Player.instance.Die(false);
     }
 }

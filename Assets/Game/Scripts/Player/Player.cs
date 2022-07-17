@@ -97,10 +97,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Die(bool playThomas = true)
     {
         Enabled = false;
-        GetComponent<DeathSequence>().DeathFX();
+        GetComponent<DeathSequence>().DeathFX(playThomas);
     }
     public void UpdateState(PlayerState newState)
     {
