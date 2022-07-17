@@ -5221,7 +5221,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _disableInteractionAfterInteracted: 1
-  _interactionDelay: 0.3
+  _interactionDelay: 1.5
+  _playDeathFX: 1
 --- !u!65 &1120899829
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5247,7 +5248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeafa287ca31b4f4cb23f92ba94a1c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1
+  delay: 1.5
 --- !u!1001 &1123158058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5404,6 +5405,7 @@ MonoBehaviour:
         m_CallState: 2
   _disableInteractionAfterInteracted: 0
   _interactionDelay: 0.3
+  _playDeathFX: 0
 --- !u!65 &1123158063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5679,9 +5681,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rodrigo Pinheiro<size=50%>. code <size=100%>\nTom\xE1s Franco<size=50%>.
-    art <size=100%>\nAfonso Rosa<size=50%>. design <size=100%>\nBernardo Rebelo<size=50%>.
-    sound <size=100%>"
+  m_text: "Rodrigo Pinheiro<size=50%>. code <size=100%>\nAndr\xE9 Vitorino<size=50%>.
+    code <size=100%>\nTom\xE1s Franco<size=50%>. art <size=100%>\nAfonso Rosa<size=50%>.
+    design <size=100%>\nBernardo Rebelo<size=50%>. sound <size=100%>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd6398d5bbd217548a993a01016a2fed, type: 2}
   m_sharedMaterial: {fileID: -1469275076025553747, guid: cd6398d5bbd217548a993a01016a2fed, type: 2}
@@ -6185,25 +6187,25 @@ MonoBehaviour:
   m_text: '"Crow" ([https://skfb.ly/6RoFP](https://skfb.ly/6RoFP)) by Alexei Ostapenko
     is licensed under Creative Commons Attribution ([http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/)).
 
-    
+
 
     "Sculpt
     Monster Windigo" ([https://skfb.ly/ou7GY](https://skfb.ly/ou7GY)) by docplagueart
     is licensed under Creative Commons Attribution-NonCommercial ([http://creativecommons.org/licenses/by-nc/4.0/](http://creativecommons.org/licenses/by-nc/4.0/)).
 
-    
+
 
     "Mutant
     Skull" ([https://skfb.ly/OXWu](https://skfb.ly/OXWu)) by Renafox is licensed
     under Creative Commons Attribution-NonCommercial ([http://creativecommons.org/licenses/by-nc/4.0/](http://creativecommons.org/licenses/by-nc/4.0/)).
 
-    
+
 
     "Crystal
     stone (rock)" ([https://skfb.ly/6WMAx](https://skfb.ly/6WMAx)) by GenEugene is
     licensed under Creative Commons Attribution-NonCommercial ([http://creativecommons.org/licenses/by-nc/4.0/](http://creativecommons.org/licenses/by-nc/4.0/)).
 
-    
+
 
     "Stylized
     Male Basemesh" ([https://skfb.ly/6WLZN](https://skfb.ly/6WLZN)) by victormalta
@@ -8378,6 +8380,7 @@ MonoBehaviour:
         m_CallState: 2
   _disableInteractionAfterInteracted: 1
   _interactionDelay: 0.3
+  _playDeathFX: 0
 --- !u!65 &1836133772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9076,15 +9079,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e690d2bf4dbd9f4a89e427d84ebdd15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07179
+      value: 0.0714
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e690d2bf4dbd9f4a89e427d84ebdd15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0082
+      value: -0.0069
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e690d2bf4dbd9f4a89e427d84ebdd15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.11059
+      value: 0.112
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e690d2bf4dbd9f4a89e427d84ebdd15, type: 3}
       propertyPath: m_LocalRotation.w

@@ -13,6 +13,7 @@ public class TheDie : MonoBehaviour
     private DieFaces faces;
     private DieEventsManager eventsManager;
     private Animator animator;
+    [SerializeField] private DiceGameEvent overrideEvent;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float rotateDuration = 4f;
     [SerializeField] private float choiceRotationDuration = 0.6f;
@@ -21,8 +22,8 @@ public class TheDie : MonoBehaviour
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
     private SideChoice rollPick;
-    public static bool Rolling {get; private set;}
-    private void Awake() 
+    public static bool Rolling { get; private set; }
+    private void Awake()
     {
         faces = GetComponentInChildren<DieFaces>();
         animator = GetComponent<Animator>();
@@ -30,14 +31,15 @@ public class TheDie : MonoBehaviour
         eventsManager = GetComponent<DieEventsManager>();
         diceState = new Dictionary<DieFaces.Direction, DiceGameEvent>();
     }
-    
-    private void Start() 
+
+    private void Start()
     {
         rollsCount = 0;
         RandomizeFaces(0);
     }
-    
-    private void Update() {
+
+    private void Update()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Roll();
@@ -51,7 +53,7 @@ public class TheDie : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             DieFaces.Direction dir = (DieFaces.Direction)i;
-            
+
             if (diceState[dir] == null)
             {
                 // Get new side for this
@@ -81,12 +83,12 @@ public class TheDie : MonoBehaviour
         foreach (var item in pickedEvents)
         {
             DieFaces.Direction d = (DieFaces.Direction)index;
-            
+
             if (!diceState.ContainsKey(d))
                 diceState.Add(d, item);
             else
                 diceState[d] = item;
-            
+
             faces.SetFace(item, d);
             index++;
         }
@@ -96,11 +98,11 @@ public class TheDie : MonoBehaviour
     {
         DieFaces.Direction dir = (DieFaces.Direction)Random.Range(0, 6);
         DiceGameEvent picked = diceState[dir];
-        
+
         Debug.Log($"Picked event with dice side {dir} and event {picked.name}");
 
         diceState[dir] = null;
-        return new SideChoice(){faceTransform = faces.GetTransform(dir), diceSideEvent = picked};
+        return new SideChoice() { faceTransform = faces.GetTransform(dir), diceSideEvent = picked };
     }
 
     public IEnumerator RollAndPick()
@@ -113,7 +115,7 @@ public class TheDie : MonoBehaviour
         float elapsed = 0f;
         float newRotationTimer = 0f;
         Vector3 target = Random.insideUnitSphere.normalized;
-        while(elapsed <= rotateDuration)
+        while (elapsed <= rotateDuration)
         {
             if (newRotationTimer >= 1f)
             {
@@ -135,7 +137,7 @@ public class TheDie : MonoBehaviour
         finalRot = finalRot * rotationRoot.rotation;
 
         Quaternion startRot = rotationRoot.rotation;
-        while(elapsed <= choiceRotationDuration)
+        while (elapsed <= choiceRotationDuration)
         {
             rotationRoot.rotation = Quaternion.Slerp(
                 startRot, finalRot, elapsed / choiceRotationDuration);
@@ -146,11 +148,19 @@ public class TheDie : MonoBehaviour
         animator.SetTrigger("EndRoll");
 
     }
-    
+
     //! Called via animation event to trigger the game event
     public void TriggerSide()
     {
-        DiceGameEvent eventData = rollPick.diceSideEvent;
+        DiceGameEvent eventData = null;
+        if (overrideEvent != null)
+        {
+            eventData = overrideEvent;
+            overrideEvent = null;
+        }
+        else
+            eventData = rollPick.diceSideEvent;
+        
         if (eventData.activationParticles != null)
         {
             GameObject obj = Instantiate(eventData.activationParticles, transform.position, Quaternion.identity);
@@ -168,10 +178,10 @@ public class TheDie : MonoBehaviour
 
         float elapsed = 0;
         Vector3 start = sideObject.position;
-        while(elapsed < 2f)
+        while (elapsed < 2f)
         {
             sideObject.position = Vector3.Lerp(
-                start, 
+                start,
                 start + Vector3.down * 0.5f, elapsed / 2f);
             elapsed += Time.deltaTime;
             yield return null;
