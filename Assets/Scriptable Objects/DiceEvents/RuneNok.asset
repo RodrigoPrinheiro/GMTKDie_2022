@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
   m_Name: RuneNok
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   eventDuration: 20
   persistentTimeLoop: 120
   minRollsToAppear: 0
