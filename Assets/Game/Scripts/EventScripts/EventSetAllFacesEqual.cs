@@ -32,8 +32,15 @@ public class EventSetAllFacesEqual : MonoBehaviour
 		_dieFaces = _die.GetComponentInChildren<DieFaces>();
 		_die.DestroyAllFaces();
 
+		int rnd;
 
-		int rnd = Random.Range(0, 5);
+		// Hate it.
+		do
+		{
+			rnd = Random.Range(0, 5);
+		} 
+		while (_dieFaces.GetTransform(_directions[rnd]) == _die.rollPick.faceTransform);
+
 		var evnt = _die.GetDieFaceEvent(_directions[rnd]);
 
 		foreach (var dir in _directions)
