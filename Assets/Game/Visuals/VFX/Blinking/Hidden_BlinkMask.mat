@@ -26,8 +26,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _VignettePower: 4.9878974
-    - _VignetteSize: 0.70030713
+    - _VignettePower: 4.9996057
+    - _VignetteSize: 0.7000099
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
