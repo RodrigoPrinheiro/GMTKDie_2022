@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   eventDuration: 1
-  persistentTimeLoop: 120
+  persistentTimeLoop: 1
   minRollsToAppear: 0
   byPassQueue: 0
   unlocksEvent: {fileID: 0}
