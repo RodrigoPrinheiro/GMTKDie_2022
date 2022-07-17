@@ -73,6 +73,7 @@ public class TheDie : MonoBehaviour
         if (Rolling || eventsManager.EventRunning) return;
 
         Rolling = true;
+		rollsCount++;
         for (int i = 0; i < 6; i++)
         {
             DieFaces.Direction dir = (DieFaces.Direction)i;
