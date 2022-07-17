@@ -29,6 +29,6 @@ public class DeathSequence : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SoundManager.Play(death);
         yield return new WaitForSeconds(20f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }

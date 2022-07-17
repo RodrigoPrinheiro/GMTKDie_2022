@@ -153,8 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
-  mainMixer: {fileID: 24100000, guid: 359216fa79b83104da52364087061bbd, type: 2}
-  database: {fileID: 11400000, guid: 884a8c8551702894ebab2ce5d6bc1cd2, type: 2}
 --- !u!4 &59178187
 Transform:
   m_ObjectHideFlags: 0
@@ -364,5 +362,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92db0711b6f3f9245855b7dbb7dd6726, type: 2}
   - {fileID: 11400000, guid: 22dbf18b3f2d8134bb888032b15c31df, type: 2}
   - {fileID: 11400000, guid: 9be09484c8b983943b10361f3cb2d141, type: 2}
-  - {fileID: 11400000, guid: fd01ba1ea86bd3043bc73f9cc444f6b3, type: 2}
-  - {fileID: 11400000, guid: 9cd75465e419715488a60348467aebc9, type: 2}
+  - {fileID: 11400000, guid: f51e05d03382a9a469911695d3446b80, type: 2}
+  - {fileID: 11400000, guid: 04d2be0fe840cea459d7f7c6303ffcb6, type: 2}
