@@ -24,15 +24,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5029922422709894653}
-  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 1.79, z: -3.659}
+  m_LocalRotation: {x: -0.00000076748273, y: 0.965926, z: -0.25881857, w: 0.0000028642896}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5029922422796242817}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 180, z: 0}
 --- !u!114 &5029922422709894655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,16 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   leanSpeed: 3
+  blinkTime: 0.5
   leanTransform: {fileID: 5029922422796242817}
   changes:
   - positionOffset: {x: 0, y: 0, z: 0}
     rotationOffset: {x: 0, y: 0, z: 0}
-  - positionOffset: {x: -2, y: 0, z: 0}
-    rotationOffset: {x: 0, y: 0, z: 10}
-  - positionOffset: {x: 2, y: 0, z: 0}
-    rotationOffset: {x: 0, y: 0, z: -10}
-  - positionOffset: {x: 0, y: -1, z: 0}
-    rotationOffset: {x: 25, y: 0, z: 0}
+  - positionOffset: {x: -1, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 5}
+  - positionOffset: {x: 1, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: -5}
+  - positionOffset: {x: 0, y: -0.5, z: 0}
+    rotationOffset: {x: 15, y: 0, z: 0}
   - positionOffset: {x: 0, y: 0, z: 0}
     rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5029922422796242822
