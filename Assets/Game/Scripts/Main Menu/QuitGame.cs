@@ -14,6 +14,7 @@ public class QuitGame : MonoBehaviour
     IEnumerator CInteractionDelay()
     {
         yield return new WaitForSeconds(delay);
+        Debug.LogWarning("Quit Game");
         Application.Quit();
     }
 }
