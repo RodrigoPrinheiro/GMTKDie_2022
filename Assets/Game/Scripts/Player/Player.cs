@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     public static Player instance;
     public bool Enabled {get; set;}
-    [SerializeField, ReadOnly] private PlayerState state;
+    [ReadOnly] public PlayerState state;
     [SerializeField] private float leanSpeed = 0.6f;
     [SerializeField, Range(0f, 1.2f)] private float blinkTime = 0.5f;
     [SerializeField] private Transform leanTransform;

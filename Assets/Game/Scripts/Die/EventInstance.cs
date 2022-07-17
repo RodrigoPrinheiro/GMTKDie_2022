@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EventInstance : MonoBehaviour
+public class EventInstance : MonoBehaviour
 {
     public static DieEventsManager EventsManager { get; set; }
     public DiceGameEvent Data { get; set; }
-    public float LastTimeStamp;
+    [ReadOnly] public float LastTimeStamp;
     public bool IsPersistent => Data.type == DiceEventType.Persistent;
 
     private bool isRunning = false;
@@ -18,6 +18,8 @@ public abstract class EventInstance : MonoBehaviour
         LastTimeStamp = Time.time;
         isRunning = true;
         OnRun();
+
+        transform.GetChild(0).gameObject.SetActive(true);
     }
     public void End()
     {
@@ -25,13 +27,21 @@ public abstract class EventInstance : MonoBehaviour
         isRunning = false;
         OnEnd();
 
+        transform.GetChild(0).gameObject.SetActive(false);
+
         if (!IsPersistent)
         {
             Destroy(gameObject);
         }
     }
-    public abstract void OnRun();
-    public abstract void OnEnd();
+    public virtual void OnRun()
+    {
+
+    }
+    public virtual void OnEnd()
+    {
+
+    }
     private void Update()
     {
         if (isRunning)
