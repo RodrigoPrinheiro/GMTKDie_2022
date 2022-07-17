@@ -9,6 +9,8 @@ public class DiceButton : MonoBehaviour
     [SerializeField] private bool _disableInteractionAfterInteracted;
     [SerializeField] private float _interactionDelay = .3f;
 
+    [SerializeField] private bool _playDeathFX;
+
     bool CanInteract => !_delayLock && !_interactionLockedAfterInteraction;
 
     bool _delayLock;
@@ -25,10 +27,13 @@ public class DiceButton : MonoBehaviour
     {
         if (!CanInteract) return;
 
-        if(_disableInteractionAfterInteracted) _interactionLockedAfterInteraction = true;
+        if (_disableInteractionAfterInteracted) _interactionLockedAfterInteraction = true;
         _anim.SetTrigger("OnInteracted");
         onInteracted.Invoke();
         StartCoroutine(CInteractionDelay());
+        
+        if (_playDeathFX)
+            SSEffects.FxAnimator.SetTrigger("DeathEffect");
     }
 
     IEnumerator CInteractionDelay()
