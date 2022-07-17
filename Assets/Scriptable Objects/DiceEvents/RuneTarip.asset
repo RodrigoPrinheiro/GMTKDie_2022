@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: RuneTarip
   m_EditorClassIdentifier: 
   type: 0
+  eventDuration: 20
   persistentTimeLoop: 120
   minRollsToAppear: 0
+  byPassQueue: 0
   unlocksEvent: {fileID: 0}
   unlockable: 0
   diceSideVisual: {fileID: 6743865231617402253, guid: caae2ec61411e624b815beee4976f1d9, type: 3}
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
-  eventPack: {fileID: 0}
+  eventPack: {fileID: 2993728544341191652, guid: 53c7ddf2eadfbd1479ad7106aa9f2084, type: 3}
   voiceClip: {fileID: 0}

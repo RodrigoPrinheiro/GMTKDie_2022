@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114704777729525043}
-  - component: {fileID: 5007257649888011294}
+  - component: {fileID: 5449799173490917116}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression (2)
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5007257649888011294
+--- !u!114 &5449799173490917116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 1010135060318790351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
+  m_Script: {fileID: 11500000, guid: bab10677486383f499aaab549bf35be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
+  scenePackName: Water Floor Scenery
+--- !u!1 &1959239066435002562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243539809638949109}
+  m_Layer: 0
+  m_Name: PassiveEventStoryProgression (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1243539809638949109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959239066435002562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2993728544158708265}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2308734298432395668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2327238159737844039}
+  m_Layer: 0
+  m_Name: PassiveEventStoryProgression (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2327238159737844039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308734298432395668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2993728544158708265}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3738869531151503957
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,8 +116,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022928437351613397}
-  - component: {fileID: 3626780721443903100}
-  - component: {fileID: 4514317172039320599}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression (3)
   m_TagString: Untagged
@@ -79,33 +138,6 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3626780721443903100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738869531151503957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab10677486383f499aaab549bf35be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenePackName: Void Scenery
---- !u!114 &4514317172039320599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3738869531151503957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
 --- !u!1 &5601218697011145579
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,8 +147,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6494096593756148807}
-  - component: {fileID: 5690042313270990480}
-  - component: {fileID: 5100426175718917588}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression (1)
   m_TagString: Untagged
@@ -139,33 +169,6 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5690042313270990480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601218697011145579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab10677486383f499aaab549bf35be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenePackName: Water Floor Scenery
---- !u!114 &5100426175718917588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5601218697011145579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
 --- !u!1 &7177504462321491711
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8061069450072722933}
-  - component: {fileID: 511398798780419227}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression (4)
   m_TagString: Untagged
@@ -198,20 +200,6 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &511398798780419227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7177504462321491711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
 --- !u!1 &8525839420018766804
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 299887561350322495}
-  - component: {fileID: 7916139640554230857}
+  - component: {fileID: 5712228744152250313}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression (5)
   m_TagString: Untagged
@@ -244,7 +232,7 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7916139640554230857
+--- !u!114 &5712228744152250313
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,11 +241,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8525839420018766804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
+  m_Script: {fileID: 11500000, guid: bab10677486383f499aaab549bf35be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
+  scenePackName: Void Scenery
 --- !u!1 &8919313169569841993
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +254,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3046445315875737926}
-  - component: {fileID: 2658138657291056734}
   m_Layer: 0
   m_Name: PassiveEventStoryProgression
   m_TagString: Untagged
@@ -290,20 +276,6 @@ Transform:
   m_Father: {fileID: 2993728544158708265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2658138657291056734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8919313169569841993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 0}
-  playOnEnable: 0
 --- !u!1001 &7998253144092569888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,7 +354,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f4327a58528b84d8ceaeb670123332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressionBlocks: []
+  progressionBlocks:
+  - {fileID: 8919313169569841993}
+  - {fileID: 5601218697011145579}
+  - {fileID: 1010135060318790351}
+  - {fileID: 3738869531151503957}
+  - {fileID: 7177504462321491711}
+  - {fileID: 8525839420018766804}
+  - {fileID: 1959239066435002562}
+  - {fileID: 2308734298432395668}
+  audios:
+  - {fileID: 11400000, guid: d7399ceb65ef92c459466abf1a369d83, type: 2}
+  - {fileID: 11400000, guid: ad256262539e07f478536ede9d5d6048, type: 2}
+  - {fileID: 11400000, guid: 665a7579dbb7bb243b0f75520b6ff1e5, type: 2}
+  - {fileID: 11400000, guid: c9d909f7eeb9bb34c9d7029e318199db, type: 2}
+  - {fileID: 11400000, guid: 6d10a8a811aad3145ad337147de7e4d7, type: 2}
+  - {fileID: 11400000, guid: 9d6bfdca95070fe408aaf05a5e94770a, type: 2}
+  - {fileID: 11400000, guid: 6c4f1c03b4294b44783cf6a26ccb695f, type: 2}
+  - {fileID: 11400000, guid: 0331e3fe7cdf74441a70697678dc656e, type: 2}
 --- !u!4 &2993728544158708265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5148842410357228297, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
