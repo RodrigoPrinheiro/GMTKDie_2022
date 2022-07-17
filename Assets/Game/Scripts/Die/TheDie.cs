@@ -111,18 +111,18 @@ public class TheDie : MonoBehaviour
 
     public SideChoice GetRandomChoice()
     {
-        if (rollsCount % 4 == 0)
+        if (rollsCount % 2 == 0)
         {
             for (int i = 0; i < 6; i++)
             {
                 var f = (DieFaces.Direction)i;
-                if (diceState[f].name == "RuneTapir")
+                if (diceState[f].name == "RuneTarip")
                 {
                     return new SideChoice() { faceTransform = faces.GetTransform(f), diceSideEvent = diceState[f] };
                 }
             }
         }
-        
+
         DieFaces.Direction dir = (DieFaces.Direction)Random.Range(0, 6);
         DiceGameEvent picked = diceState[dir];
 

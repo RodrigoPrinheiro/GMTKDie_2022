@@ -20,7 +20,8 @@ public class EventCheck : MonoBehaviour
         {
             if (buildUpToDeath > buildUpTime)
             {
-                Player.instance.Die();
+                if (Player.instance.Enabled)
+                    Player.instance.Die();
             }
 
             buildUpToDeath += Time.deltaTime;
