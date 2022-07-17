@@ -19,7 +19,7 @@ public class DieEventsManager : MonoBehaviour
     private void Update()
     {
         if (EventRunning) return;
-
+        
         if (queuedGameEvents.Count > 0)
         {
             EventInstance e = queuedGameEvents.Dequeue();
@@ -31,7 +31,6 @@ public class DieEventsManager : MonoBehaviour
         {
             if (activePersistentEvents[i].CanTrigger())
             {
-                Debug.Log("Triggered persistent event");
                 activePersistentEvents[i].Run();
             }
         }
