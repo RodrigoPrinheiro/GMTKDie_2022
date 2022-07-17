@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
   m_Name: RuneE
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   eventDuration: 10
   persistentTimeLoop: 120
   minRollsToAppear: 0
@@ -22,5 +22,5 @@ MonoBehaviour:
   diceSideVisual: {fileID: 971296801637518074, guid: 5cba0901fa111b649b19eabd83fbc98e, type: 3}
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
-  eventPack: {fileID: 8525210506979927063, guid: 7e47bdf33a2711549a77213c8d72b55d, type: 3}
+  eventPack: {fileID: 8525210506979927063, guid: 8ea48e55884459840989ab7bddcfcfd8, type: 3}
   voiceClip: {fileID: 0}

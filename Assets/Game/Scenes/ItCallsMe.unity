@@ -17836,7 +17836,7 @@ PrefabInstance:
     - target: {fileID: 2373125772153274346, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
       propertyPath: overrideEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 22dbf18b3f2d8134bb888032b15c31df, type: 2}
+      objectReference: {fileID: 11400000, guid: 1af5de503b29b24468b0c61a8e715488, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
 --- !u!4 &2029852738 stripped

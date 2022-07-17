@@ -29,7 +29,8 @@ public class SoundManager : Singleton<SoundManager>
         audioSources = new Dictionary<AudioSource, Sound>();
     }
 
-    AudioSource _Play(SoundDef soundDef, float volume = 1.0f, float pitch = 1.0f)
+    AudioSource _Play
+		(SoundDef soundDef, float volume = 1.0f, float pitch = 1.0f)
     {
         AudioMixerGroup mixer = soundDef.group;
         if (mixer == null)

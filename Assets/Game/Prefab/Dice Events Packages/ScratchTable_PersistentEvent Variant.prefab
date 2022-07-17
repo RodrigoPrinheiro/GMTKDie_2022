@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4952373622661745270
+--- !u!1 &1008279823
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,59 +8,59 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8296758216857518714}
-  - component: {fileID: 5321006010243393201}
-  - component: {fileID: 8748641543719661814}
+  - component: {fileID: 1008279824}
+  - component: {fileID: 1008279825}
+  - component: {fileID: 4911816762306199319}
   m_Layer: 0
-  m_Name: AudioVoiceLine
+  m_Name: PlayAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8296758216857518714
+--- !u!4 &1008279824
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952373622661745270}
+  m_GameObject: {fileID: 1008279823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9153712173769432745}
+  m_Father: {fileID: 2456948575075535676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5321006010243393201
+--- !u!114 &1008279825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952373622661745270}
+  m_GameObject: {fileID: 1008279823}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40f20708ef960884f9229e23073d4b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundToPlay: {fileID: 11400000, guid: 2be76e5719dd08048bb8c60611e3f151, type: 2}
+  soundToPlay: {fileID: 11400000, guid: c90cd3dadd3aa0c47a41a91ec95c8fa8, type: 2}
   playOnEnable: 1
---- !u!114 &8748641543719661814
+--- !u!114 &4911816762306199319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952373622661745270}
+  m_GameObject: {fileID: 1008279823}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d184ab69b4ebf247bf63f2672834f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _profile: {fileID: 11400000, guid: 65f7907a5df66cd4a86454f00cfa3f92, type: 2}
---- !u!1001 &4070366058328694176
+--- !u!1001 &7308367281955309621
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -69,7 +69,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5148842409423968964, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
       propertyPath: m_Name
-      value: PlayVoiceLine_PersistentEvent Variant
+      value: ScratchTable_PersistentEvent Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148842409423968964, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5148842409423968965, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
       propertyPath: m_RootOrder
@@ -117,8 +121,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
---- !u!4 &9153712173769432745 stripped
+--- !u!4 &2456948575075535676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5148842410357228297, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
-  m_PrefabInstance: {fileID: 4070366058328694176}
+  m_PrefabInstance: {fileID: 7308367281955309621}
   m_PrefabAsset: {fileID: 0}
