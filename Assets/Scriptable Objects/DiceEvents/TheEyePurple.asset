@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
+  m_Name: TheEyePurple
+  m_EditorClassIdentifier: 
+  type: 1
+  eventDuration: 1
+  persistentTimeLoop: 120
+  minRollsToAppear: 0
+  byPassQueue: 0
+  unlocksEvent: {fileID: 0}
+  unlockable: 1
+  diceSideVisual: {fileID: 1900875139369047936, guid: 27c0a7742fa622a489fc5a02721a3a33, type: 3}
+  activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
+  destroyParticlesAfter: 1
+  eventPack: {fileID: 1392228036889753018, guid: 4809017cb0fa44a4f95cd3cfaae50a15, type: 3}
+  voiceClip: {fileID: 11400000, guid: b76af07a4c92ea54eb80bdafd62fdb3a, type: 2}

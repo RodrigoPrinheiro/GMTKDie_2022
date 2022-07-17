@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6520337fba97484b9aedbe8ecfd9592, type: 3}
+  m_Name: shadows_running_around
+  m_EditorClassIdentifier: 
+  group: {fileID: -5062146128371310720, guid: 359216fa79b83104da52364087061bbd, type: 2}
+  is3D: 0
+  isLoop: 0
+  isScene: 1
+  audioClip:
+  - {fileID: 8300000, guid: 71f576ab3e46e7f4e95cdf0137520d53, type: 3}
+  pitchRange: 0
+  volumeRange: 0

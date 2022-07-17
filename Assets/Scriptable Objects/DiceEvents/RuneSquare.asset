@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f5b9842873d8e42b32329f83add2d9, type: 3}
   m_Name: RuneSquare
   m_EditorClassIdentifier: 
-  type: 0
-  eventDuration: 20
+  type: 1
+  eventDuration: 1
   persistentTimeLoop: 120
   minRollsToAppear: 0
   byPassQueue: 0
-  unlocksEvent: {fileID: 0}
+  unlocksEvent: {fileID: 11400000, guid: f51e05d03382a9a469911695d3446b80, type: 2}
   unlockable: 0
   diceSideVisual: {fileID: 5046276366339307699, guid: c496eec0705664c4e8ba904f7f088678, type: 3}
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
-  eventPack: {fileID: 6780178583389552985, guid: aefcaddbf1a9f23419a72be4dd6de043, type: 3}
-  voiceClip: {fileID: 0}
+  eventPack: {fileID: 5148842409423968964, guid: 36f800b2f1c183346a21eaeafdf694a0, type: 3}
+  voiceClip: {fileID: 11400000, guid: 54de4d3819425704b8b86401ff453618, type: 2}
