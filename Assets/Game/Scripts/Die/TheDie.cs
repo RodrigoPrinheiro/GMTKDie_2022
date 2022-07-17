@@ -119,7 +119,7 @@ public class TheDie : MonoBehaviour
 
     public SideChoice GetRandomChoice()
     {
-        if (rollsCount % 2 == 0)
+        if (rollsCount % 3 == 0)
         {
             for (int i = 0; i < 6; i++)
             {
