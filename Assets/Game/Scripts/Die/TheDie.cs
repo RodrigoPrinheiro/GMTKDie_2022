@@ -223,8 +223,7 @@ public class TheDie : MonoBehaviour
 			}
 
 			Destroy(sideObject.gameObject);
-
-			Rolling = false;
 		}
-    }
+		Rolling = false;
+	}
 }
