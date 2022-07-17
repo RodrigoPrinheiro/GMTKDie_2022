@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EventSetAllFacesEqual : MonoBehaviour
 {
-	private static bool ranOnce = false;
-
 	private readonly List<DieFaces.Direction> _directions = new List<DieFaces.Direction>()
 	{
 		DieFaces.Direction.Xm,
@@ -16,8 +14,8 @@ public class EventSetAllFacesEqual : MonoBehaviour
 		DieFaces.Direction.Zp
 	};
 
-	[SerializeField] private TheDie _die;
-	[SerializeField] private DieFaces _dieFaces;
+	private TheDie _die;
+	private DieFaces _dieFaces;
 	[SerializeField] private bool _playOnEnable;
 
 	private void OnEnable()
@@ -30,11 +28,9 @@ public class EventSetAllFacesEqual : MonoBehaviour
 
 	private void SetAllFaces()
 	{
-		if (ranOnce) return;
-		ranOnce = true;
-
 		_die = FindObjectOfType<TheDie>();
 		_dieFaces = _die.GetComponentInChildren<DieFaces>();
+		_die.DestroyAllFaces();
 
 
 		int rnd = Random.Range(0, 5);

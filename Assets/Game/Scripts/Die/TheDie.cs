@@ -51,6 +51,16 @@ public class TheDie : MonoBehaviour
 		return diceState[direction];
 	}
 
+	public void DestroyAllFaces()
+	{
+		foreach (var item in diceState)
+		{
+			Transform sideObject = faces.GetTransform(item.Key).GetChild(0);
+
+			Destroy(sideObject.gameObject);
+		}
+	}
+
     public void Roll()
     {
         if (Rolling || eventsManager.EventRunning) return;
