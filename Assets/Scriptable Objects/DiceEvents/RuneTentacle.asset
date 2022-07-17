@@ -18,5 +18,7 @@ MonoBehaviour:
   unlocksEvent: {fileID: 0}
   unlockable: 0
   diceSideVisual: {fileID: 5643949053590740700, guid: eb4432158804f0540b48d9e845456ede, type: 3}
+  activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
+  destroyParticlesAfter: 1
   eventPack: {fileID: 0}
   voiceClip: {fileID: 0}

@@ -11,19 +11,23 @@ public class SideChoice
 public class TheDie : MonoBehaviour
 {
     private DieFaces faces;
+    private DieEventsManager eventsManager;
     private Animator animator;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float rotateDuration = 4f;
     [SerializeField] private float choiceRotationDuration = 0.6f;
     [SerializeField] private AnimationCurve speedIncreaseCurve;
+    [SerializeField] private Transform rotationRoot;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
+    private DiceGameEvent lastPicked;
 
     private void Awake() 
     {
         faces = GetComponentInChildren<DieFaces>();
         animator = GetComponent<Animator>();
 
+        eventsManager = GetComponent<DieEventsManager>();
         diceState = new Dictionary<DieFaces.Direction, DiceGameEvent>();
     }
     
@@ -36,7 +40,6 @@ public class TheDie : MonoBehaviour
 
     public void Roll()
     {
-        animator.SetTrigger("StartRoll");
         StartCoroutine(RollAndPick());
     }
 
@@ -71,7 +74,11 @@ public class TheDie : MonoBehaviour
     public IEnumerator RollAndPick()
     {
         SideChoice choice = GetRandomChoice();
+        lastPicked = choice.diceSideEvent;
 
+        animator.SetTrigger("StartRoll");
+        yield return new WaitForSeconds(0.46f);
+        // Random rot
         float elapsed = 0f;
         float newRotationTimer = 0f;
         Vector3 target = Random.insideUnitSphere.normalized;
@@ -83,28 +90,41 @@ public class TheDie : MonoBehaviour
                 newRotationTimer = 0;
             }
             float speed = rotationSpeed * speedIncreaseCurve.Evaluate(elapsed / rotateDuration);
-            transform.Rotate(target * Time.deltaTime * speed);
+            rotationRoot.Rotate(target * Time.deltaTime * speed);
 
             elapsed += Time.deltaTime;
             newRotationTimer += Time.deltaTime;
             yield return null;
         }
 
-
+        // Rotate to correct side
         elapsed = 0f;
         Quaternion finalRot = Quaternion.LookRotation(Vector3.up, Vector3.right); // Subtract
         finalRot = finalRot * Quaternion.Inverse(choice.faceTransform.rotation); // Add
-        finalRot = finalRot * transform.rotation;
+        finalRot = finalRot * rotationRoot.rotation;
 
-        Quaternion startRot = transform.rotation;
+        Quaternion startRot = rotationRoot.rotation;
         while(elapsed <= choiceRotationDuration)
         {
-            transform.rotation = Quaternion.Slerp(
+            rotationRoot.rotation = Quaternion.Slerp(
                 startRot, finalRot, elapsed / choiceRotationDuration);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
         animator.SetTrigger("EndRoll");
+
+    }
+    
+    //! Called via animation event to trigger the game event
+    public void TriggerSide()
+    {
+        if (lastPicked.activationParticles != null)
+        {
+            GameObject obj = Instantiate(lastPicked.activationParticles, transform.position, Quaternion.identity);
+            Destroy(obj, lastPicked.destroyParticlesAfter);
+        }
+
+        eventsManager.QueueEvent(lastPicked);
     }
 }
