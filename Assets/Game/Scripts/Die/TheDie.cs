@@ -19,6 +19,7 @@ public class TheDie : MonoBehaviour
     [SerializeField] private float choiceRotationDuration = 0.6f;
     [SerializeField] private AnimationCurve speedIncreaseCurve;
     [SerializeField] private Transform rotationRoot;
+    [SerializeField] private ParticleSystem _rotatePS;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
     public SideChoice rollPick { get; private set; }
@@ -30,6 +31,11 @@ public class TheDie : MonoBehaviour
 
         eventsManager = GetComponent<DieEventsManager>();
         diceState = new Dictionary<DieFaces.Direction, DiceGameEvent>();
+    }
+
+    public void RotatePSPlay() // called in animation event
+    {
+        _rotatePS.Play();
     }
 
     private void Start()

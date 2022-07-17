@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: RuneNok
   m_EditorClassIdentifier: 
   type: 0
+  eventDuration: 20
   persistentTimeLoop: 120
   minRollsToAppear: 0
+  byPassQueue: 0
   unlocksEvent: {fileID: 0}
   unlockable: 0
   diceSideVisual: {fileID: 3754901354428783763, guid: 074931a973c98b1478fe0ec5d86f9e65, type: 3}
   activationParticles: {fileID: 426238639765937272, guid: cf7c183702d6fae4a96c8ba18da98c66, type: 3}
   destroyParticlesAfter: 1
-  eventPack: {fileID: 0}
-  voiceClip: {fileID: 0}
+  eventPack: {fileID: 9153712172840486756, guid: f068794dc7ae0f940b6e701ca797c8de, type: 3}
+  voiceClip: {fileID: 11400000, guid: ddf7afc04c8cd414691c999db3ce0eba, type: 2}
