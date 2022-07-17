@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Game/Scenes/MainMenu.unity
+    guid: e94db6137c5e0004ea8738596157d75b
+  - enabled: 1
+    path: Assets/Game/Scenes/ItCallsMe.unity
+    guid: b5ac6c722da034247b13cb1665e3a420
+  - enabled: 1
     path: Assets/Game/Scenes/Managers.unity
     guid: 2bdda8d7703ac644aa6105fe2d93f626
   m_configObjects: {}

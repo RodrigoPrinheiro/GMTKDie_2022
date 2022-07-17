@@ -596,8 +596,8 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 1
-  WavingRange: 0.8
+  WavingSpeed: 0.2
+  WavingRange: 1
   WavingAxis: {x: 1, y: 1, z: 1}
   WavingType: 1
   AlternateWave: 1
@@ -1259,7 +1259,7 @@ MonoBehaviour:
   InterpolateRate: 0
   Prewarm: 0
   Slithery: 1
-  Curling: 0.5
+  Curling: 1
   Springiness: 0
   MaxStretching: 0.375
   AngleLimit: 181
@@ -1995,8 +1995,8 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 1
-  WavingRange: 0.8
+  WavingSpeed: 0.2
+  WavingRange: 1
   WavingAxis: {x: 1, y: 1, z: 1}
   WavingType: 1
   AlternateWave: 1
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   InterpolateRate: 0
   Prewarm: 0
   Slithery: 1
-  Curling: 0.5
+  Curling: 1
   Springiness: 0
   MaxStretching: 0.375
   AngleLimit: 181
@@ -3921,6 +3921,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1cb15a960a2479419e9c2fe36b45b53, type: 3}
+--- !u!1001 &518853125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26086998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.26086998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.26086998
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.93
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.4115126
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.40543717
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.57813436
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5762281
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.484
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 72.133
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -37.292
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_Name
+      value: windey
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
 --- !u!1001 &524744656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4379,8 +4452,8 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 1
-  WavingRange: 0.8
+  WavingSpeed: 0.2
+  WavingRange: 1
   WavingAxis: {x: 1, y: 1, z: 1}
   WavingType: 1
   AlternateWave: 1
@@ -5042,7 +5115,7 @@ MonoBehaviour:
   InterpolateRate: 0
   Prewarm: 0
   Slithery: 1
-  Curling: 0.5
+  Curling: 1
   Springiness: 0
   MaxStretching: 0.375
   AngleLimit: 181
@@ -5925,6 +5998,58 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5160222110152593624, guid: 85028a2d11e502b4eaed3e680d3c9e6a, type: 3}
   m_PrefabInstance: {fileID: 90680678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &794305954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+  m_PrefabInstance: {fileID: 518853125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &794305955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794305954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0715e59801812354aa878b39772a3cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 571.52
+  _intensity: 0.2
+  _shakeDuration: 0.8
+  _looping: 1
+  _shakeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _targetBone: {fileID: 794305958}
+  doItDebugStyle: 0
+--- !u!4 &794305958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7309ba5926ce29040af1e0d4e4e6ef99, type: 3}
+  m_PrefabInstance: {fileID: 518853125}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &814808232
 PrefabInstance:
@@ -14956,8 +15081,8 @@ MonoBehaviour:
   UseWaving: 1
   CosinusAdd: 0
   FixedCycle: 0
-  WavingSpeed: 1
-  WavingRange: 0.8
+  WavingSpeed: 0.2
+  WavingRange: 1
   WavingAxis: {x: 1, y: 1, z: 1}
   WavingType: 1
   AlternateWave: 1
@@ -15619,7 +15744,7 @@ MonoBehaviour:
   InterpolateRate: 0
   Prewarm: 0
   Slithery: 1
-  Curling: 0.5
+  Curling: 1
   Springiness: 0
   MaxStretching: 0.375
   AngleLimit: 181
@@ -17596,6 +17721,10 @@ PrefabInstance:
     - target: {fileID: 992722080212413783, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
       propertyPath: m_Name
       value: Die
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373125772153274346, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
@@ -22787,7 +22916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2077448939
 Transform:
   m_ObjectHideFlags: 0
