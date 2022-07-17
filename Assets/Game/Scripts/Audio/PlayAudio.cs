@@ -17,6 +17,8 @@ public class PlayAudio : MonoBehaviour
 
     public void PlayAudioObject(SoundDef sound)
     {
-        SoundManager.Play(sound);
+        Debug.Log("Play Audio");
+        AudioSource s = SoundManager.Play(sound);
+        s.transform.position = transform.position;
     }
 }
