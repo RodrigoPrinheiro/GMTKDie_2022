@@ -3,19 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlinkSSEffect : MonoBehaviour, ISSEffect
+public class BlinkSSEffect : BaseEffect, ISSEffect
 {
     private const float SHADER_TOP = 4f;
     private const float SHADER_BOT = -0.02f;
 
     [SerializeField] private AnimationCurve blinkInCurve;
     [SerializeField] private AnimationCurve blinkOutCurve;
-    [SerializeField] Material blinkMaterial;
     private Coroutine fxCoroutine;
 
-    private void Awake()
+    private void Start()
     {
-        blinkMaterial.SetFloat("_VignettePower", SHADER_TOP);
+        effectMaterial.SetFloat("_VignettePower", SHADER_TOP);
     }
     public void Activate(float strength, float transitionTime, Action effectAction = null)
     {
@@ -31,7 +30,7 @@ public class BlinkSSEffect : MonoBehaviour, ISSEffect
             (prop, t) =>
             {
                 float value = Mathf.Lerp(start, end, curve.Evaluate(t));
-                blinkMaterial.SetFloat(prop, value);
+                effectMaterial.SetFloat(prop, value);
                 if (value >= SHADER_TOP - 0.02f) effectAction?.Invoke();
             },
             transitionTime

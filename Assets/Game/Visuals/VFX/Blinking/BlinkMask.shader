@@ -2,7 +2,8 @@ Shader "Hidden/BlinkMask"
 {
     Properties
     {
-        _Color ("Main Color", Color) = (0, 0, 0, 0)
+        _MainTex("Alpha Texture", 2D) = "white" {}
+        [MainColor]_Color ("Main Color", Color) = (0, 0, 0, 0)
         _VignettePower ("Power", Float) = 1
         _VignetteSize ("Size", Float) = 1
     }
@@ -42,6 +43,7 @@ Shader "Hidden/BlinkMask"
             float _VignettePower;
             float _VignetteSize;
             fixed4 _Color;
+            sampler2D _MainTex;
 
             fixed4 frag (v2f i) : SV_Target
             {
@@ -49,8 +51,9 @@ Shader "Hidden/BlinkMask"
                 float d = sqrt(pow(i.uv.x - 0.5, 2.0) + pow(i.uv.y - 0.5, 2.0) * 2);
                 d *= _VignetteSize * d;
                 d = pow(d, _VignettePower);
-                fixed4 col = _Color;
-                col.a = d;
+
+                fixed4 col = tex2D(_MainTex, i.uv) * _Color;
+                col.a *= d;
                 return col;
             }
             ENDCG

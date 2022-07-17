@@ -41,12 +41,12 @@ public class GameData : Singleton<GameData>
         {
             DiceGameEvent e = dieEvents[i];
 
-            if (Array.Exists(unlocked, (s) => s.Contains(e.name)))
+            if (e.unlockable && Array.Exists(unlocked, (s) => s.Contains(e.name)))
                 dieEventDictionary["active"].Add(e);
             else
             {
-
                 string key = e.unlockable ? "locked" : "active";
+                dieEventDictionary[key].Add(e);
             }
         }
     }
