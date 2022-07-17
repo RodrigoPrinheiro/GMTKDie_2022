@@ -43,6 +43,12 @@ public class TheDie : MonoBehaviour
             Roll();
         }
     }
+
+	public DiceGameEvent GetDieFaceEvent(DieFaces.Direction direction)
+	{
+		return diceState[direction];
+	}
+
     public void Roll()
     {
         if (Rolling || eventsManager.EventRunning) return;
