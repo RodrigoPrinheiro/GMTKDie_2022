@@ -67,4 +67,18 @@ public class EventScriptDimmLight : MonoBehaviour
 
 		_profile.vignette.settings = settings;
 	}
+
+	private void OnApplicationQuit()
+	{
+		VignetteModel.Settings settings = new VignetteModel.Settings();
+
+		settings.rounded = true;
+		settings.roundness = 1;
+		settings.smoothness = 1;
+
+		settings.intensity = 0.13f;
+		settings.center = new Vector2(0.5f, 0.5f);
+
+		_profile.vignette.settings = settings;
+	}
 }
