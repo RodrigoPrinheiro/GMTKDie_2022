@@ -14860,6 +14860,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5029922423772045601, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 901c4e0e6e1274b4fa693535ae88e5d2, type: 3}
 --- !u!1001 &1642074388
@@ -18209,7 +18249,7 @@ PrefabInstance:
     - target: {fileID: 2373125772153274346, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
       propertyPath: overrideEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 22dbf18b3f2d8134bb888032b15c31df, type: 2}
+      objectReference: {fileID: 11400000, guid: 04d2be0fe840cea459d7f7c6303ffcb6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10cefcfaddffc364ca1a9f0844738679, type: 3}
 --- !u!4 &2029852738 stripped

@@ -19,11 +19,10 @@ public class ChangeSceneEyesClosed : MonoBehaviour
 
     public void ChangeScene()
     {
-        ev.LockEvent = false;
         int index = 0;
         for (int i = 0; i < scenePacks.Length; i++)
         {
-            if (scenePacks[i].name.Equals(scenePackName))
+            if (scenePacks[i].name == scenePackName)
             {
                 index = i;
             }
@@ -34,5 +33,8 @@ public class ChangeSceneEyesClosed : MonoBehaviour
         }
 
         scenePacks[index].SetActive(true);
+        ev.LockEvent = false;
+
+        Debug.Log("Activated scene " + scenePacks[index].name);
     }
 }

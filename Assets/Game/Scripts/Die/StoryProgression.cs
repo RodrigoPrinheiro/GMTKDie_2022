@@ -15,8 +15,8 @@ public class StoryProgression : MonoBehaviour
         SoundDef s = audios[Player.instance.progressionCount];
         GameObject p = progressionBlocks[Player.instance.progressionCount];
         p.SetActive(true);
+        
         SoundManager.Play(s);
-
         ev.ChangeDuration(s.audioClip[0].length);
     }
 }
