@@ -31,7 +31,7 @@ public class BlinkSSEffect : BaseEffect, ISSEffect
             {
                 float value = Mathf.Lerp(start, end, curve.Evaluate(t));
                 effectMaterial.SetFloat(prop, value);
-                if (value >= SHADER_TOP - 0.02f) effectAction?.Invoke();
+                if (t >= 0.99) effectAction?.Invoke();
             },
             transitionTime
         ));
