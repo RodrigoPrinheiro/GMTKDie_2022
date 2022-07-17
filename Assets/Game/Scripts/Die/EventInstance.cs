@@ -6,16 +6,17 @@ public class EventInstance : MonoBehaviour
 {
     public static DieEventsManager EventsManager { get; set; }
     public DiceGameEvent Data { get; set; }
-    [ReadOnly] public float LastTimeStamp;
     public bool IsPersistent => Data.type == DiceEventType.Persistent;
 
+    private float lastTimeStamp;
     private bool isRunning = false;
+    private float runTime;
     public void Run()
     {
         CheckSave(Data);
 
         EventsManager.EventRunning = true;
-        LastTimeStamp = Time.time;
+        runTime = 0f;
 
         // Play voice line and wait for it to end before starting
         StartCoroutine(WaitForVoiceLine(Data.voiceClip));
@@ -37,7 +38,8 @@ public class EventInstance : MonoBehaviour
     {
         if (isRunning)
         {
-            if (LastTimeStamp + Data.eventDuration > Time.time)
+            runTime += Time.deltaTime;
+            if (runTime > Data.eventDuration)
             {
                 End();
             }
@@ -54,14 +56,16 @@ public class EventInstance : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
+        lastTimeStamp = Time.time;
         isRunning = true;
         transform.GetChild(0).gameObject.SetActive(true);
     }
     public bool CanTrigger()
     {
         if (!IsPersistent) return false;
+        if (isRunning) return false;
 
-        return LastTimeStamp + Data.persistentTimeLoop > Time.time;
+        return (lastTimeStamp + Data.persistentTimeLoop) < Time.time;
     }
 
     private void CheckSave(DiceGameEvent gameEvent)
