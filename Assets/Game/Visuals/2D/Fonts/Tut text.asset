@@ -104,10 +104,10 @@ Material:
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.05
-    - _GlowOffset: 0
-    - _GlowOuter: 0.787
-    - _GlowPower: 0.75
+    - _GlowInner: 1
+    - _GlowOffset: -0.048
+    - _GlowOuter: 1
+    - _GlowPower: 1
     - _GradientScale: 10
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
@@ -145,7 +145,7 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 1, g: 0.747892, b: 0, a: 0.28235295}
+    - _GlowColor: {r: 1, g: 0.39565724, b: 0, a: 0.28235295}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Cinzel-Regular SDF
+  m_Name: Tut text
   m_EditorClassIdentifier: 
-  hashCode: -930817295
+  hashCode: 372257000
   material: {fileID: -1469275076025553747}
-  materialHashCode: 586186161
+  materialHashCode: 750873160
   m_Version: 1.1.0
   m_SourceFontFileGUID: f25766256af94e7469120f03f0138902
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f25766256af94e7469120f03f0138902, type: 3}
