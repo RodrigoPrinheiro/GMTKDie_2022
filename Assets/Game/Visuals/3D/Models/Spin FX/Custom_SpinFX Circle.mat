@@ -7,12 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_SpinFX
-  m_Shader: {fileID: 4800000, guid: 3e585f4aaa666d247bcfae41ad53c70d, type: 3}
+  m_Name: Custom_SpinFX Circle
+  m_Shader: {fileID: 4800000, guid: 4aa31ffb4d7bba0478160701e4f252f8, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _FadeTex:
-        m_Texture: {fileID: 2800000, guid: e5f862bd32f0cff448d6d7fb5c2f2415, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 75fc796687feb794b9332f84015e932a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9fbef4b79ca3b784ba023cb1331520d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryNoiseMask:
@@ -39,11 +39,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _ChromaticAberration: 0
-    - _Cutoff: 0.1
+    - _Cutoff: 0
     - _Float1: 1
+    - _RefractionStrength: 0.8
     - __dirty: 0
     m_Colors:
-    - _EmissionColor: {r: 5.992157, g: 1.6627451, b: 0, a: 0}
+    - _EmissionColor: {r: 1.4980392, g: 0.42352942, b: 0, a: 0}
     - _NoiseSpd: {r: -2, g: 0, b: 0, a: 0}
     - _SecNoiseSpd: {r: 0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -14,7 +14,7 @@ public class DeathSequence : MonoBehaviour
 
     private void Start() 
     {
-
+        //DeathFX();
     }
 
     public void DeathFX(bool playThomas = true)
@@ -31,5 +31,6 @@ public class DeathSequence : MonoBehaviour
             SoundManager.Play(death);
         yield return new WaitForSeconds(20f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        SSEffects.FxAnimator.SetTrigger("RemoveBloodshot");
     }
 }

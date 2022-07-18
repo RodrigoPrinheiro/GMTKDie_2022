@@ -20,12 +20,15 @@ public class TheDie : MonoBehaviour
     [SerializeField] private AnimationCurve speedIncreaseCurve;
     [SerializeField] private Transform rotationRoot;
     [SerializeField] private ParticleSystem _rotatePS;
+    [SerializeField] private ParticleSystem _canBeRolledPS;
     [SerializeField] private SoundDef rollSound;
     [SerializeField] private SoundDef resultSound;
     private int rollsCount;
     private Dictionary<DieFaces.Direction, DiceGameEvent> diceState;
     public SideChoice rollPick { get; private set; }
     public static bool Rolling { get; private set; }
+    public bool CantRoll => Rolling || eventsManager.EventRunning;
+    private bool prevCantRollState;
     private void Awake()
     {
         faces = GetComponentInChildren<DieFaces>();
@@ -46,34 +49,69 @@ public class TheDie : MonoBehaviour
         RandomizeFaces(0);
     }
 
+    bool _hoveringMouse = false;
     private void Update()
     {
+        InteractionFeedback();
+
         if (Input.GetMouseButtonDown(0))
         {
             Roll();
         }
+
+        animator.SetBool("Hovering", _hoveringMouse);
+        
+        prevCantRollState = CantRoll;
     }
 
-	public DiceGameEvent GetDieFaceEvent(DieFaces.Direction direction)
-	{
-		return diceState[direction];
-	}
+    private void InteractionFeedback()
+    {
+        _hoveringMouse = false;
+        
+        if (!CantRoll) // Can roll
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                TheDie db = hit.collider.GetComponent<TheDie>();
+                if (db == this)
+                {
+                    _hoveringMouse = true;
+                }
+            }
+        }
 
-	public void DestroyAllFaces()
-	{
-		foreach (var item in diceState)
-		{
-			Transform sideObject = faces.GetTransform(item.Key).GetChild(0);
-			Destroy(sideObject.gameObject);
-		}
-	}
+
+        if (CantRoll != prevCantRollState)
+        {
+            if (CantRoll == false)
+            {
+                _canBeRolledPS.Play();
+            }
+        }
+    }
+
+    public DiceGameEvent GetDieFaceEvent(DieFaces.Direction direction)
+    {
+        return diceState[direction];
+    }
+
+    public void DestroyAllFaces()
+    {
+        foreach (var item in diceState)
+        {
+            Transform sideObject = faces.GetTransform(item.Key).GetChild(0);
+            Destroy(sideObject.gameObject);
+        }
+    }
 
     public void Roll()
     {
-        if (Rolling || eventsManager.EventRunning) return;
+        if (CantRoll) return;
 
         Rolling = true;
-		rollsCount++;
+        rollsCount++;
         for (int i = 0; i < 6; i++)
         {
             DieFaces.Direction dir = (DieFaces.Direction)i;
@@ -200,7 +238,7 @@ public class TheDie : MonoBehaviour
         }
         else
             eventData = rollPick.diceSideEvent;
-        
+
         if (eventData.activationParticles != null)
         {
             GameObject obj = Instantiate(eventData.activationParticles, transform.position, Quaternion.identity, transform);
@@ -214,23 +252,23 @@ public class TheDie : MonoBehaviour
     private IEnumerator HideAndDestroySide(Transform sideTransform)
     {
         yield return new WaitForSeconds(0.6f);
-		if (sideTransform.childCount > 0)
-		{
-			Transform sideObject = sideTransform.GetChild(0);
+        if (sideTransform.childCount > 0)
+        {
+            Transform sideObject = sideTransform.GetChild(0);
 
-			float elapsed = 0;
-			Vector3 start = sideObject.position;
-			while (elapsed < 2f)
-			{
-				sideObject.position = Vector3.Lerp(
-					start,
-					start + Vector3.down * 0.5f, elapsed / 2f);
-				elapsed += Time.deltaTime;
-				yield return null;
-			}
+            float elapsed = 0;
+            Vector3 start = sideObject.position;
+            while (elapsed < 2f)
+            {
+                sideObject.position = Vector3.Lerp(
+                    start,
+                    start + Vector3.down * 0.5f, elapsed / 2f);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
 
-			Destroy(sideObject.gameObject);
-		}
-		Rolling = false;
-	}
+            Destroy(sideObject.gameObject);
+        }
+        Rolling = false;
+    }
 }
